@@ -2,8 +2,8 @@
 // Landing page for ai.edwhere.com. Reuses the labs' design tokens and illustrations.
 function asset(string $p): string { return $p . '?v=' . (@filemtime(__DIR__ . '/' . $p) ?: 0); }
 require __DIR__ . '/learn-llm/labs.php';
-$title = 'edwhere AI – Learn How Large Language Models Work with Interactive Labs';
-$desc = 'Learn AI by playing with it. Interactive, in-browser labs that run the real algorithms so you see how language models work and what breaks without each idea.';
+$title = 'edwhere AI – Learn How LLMs Work with Interactive Labs';
+$desc = 'Learn AI by playing with it. Interactive labs run the real algorithms in your browser, so you see how language models work and what breaks without each idea.';
 $url = SITE . '/';
 ?>
 <!doctype html>
@@ -17,7 +17,7 @@ $url = SITE . '/';
 <link rel="canonical" href="<?= $url ?>">
 <meta property="og:type" content="website"><meta property="og:site_name" content="edwhere AI">
 <meta property="og:title" content="<?= $title ?>"><meta property="og:description" content="<?= $desc ?>"><meta property="og:url" content="<?= $url ?>">
-<meta name="twitter:card" content="summary"><meta name="twitter:title" content="<?= $title ?>"><meta name="twitter:description" content="<?= $desc ?>">
+<meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="<?= SITE ?>/og-image.png"><meta name="twitter:image" content="<?= SITE ?>/og-image.png"><meta name="twitter:title" content="<?= $title ?>"><meta name="twitter:description" content="<?= $desc ?>">
 <script type="application/ld+json"><?= json_encode(['@context' => 'https://schema.org', '@graph' => [
   ['@type' => 'WebSite', 'name' => 'edwhere AI', 'url' => $url, 'description' => $desc],
   ['@type' => 'Organization', 'name' => 'edwhere', 'url' => $url],

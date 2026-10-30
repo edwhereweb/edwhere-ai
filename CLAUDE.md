@@ -6,4 +6,4 @@
 - Colours are CSS tokens in `css/styles.css` with light and dark variants; use `var(--accent)`, `var(--good)`, `var(--bad)`, `var(--warn)` rather than literal colours.
 - Content follows Dr. Vinod P.'s slides (Module 1-1, Tokenization, WordPiece, RNN, Seq2Seq+Attention, Scaled Dot Product Attention). Worked examples (beam search table, attention step, scalar RNN, Good-Turing birds, WordPiece corpus) use the slide numbers; keep them matching.
 - Test by running `php -S localhost:8080`, opening `/` and `/learn-llm/` and visiting every lab; check the browser console for errors and that nothing scrolls horizontally at 400px width.
-- `js/concepts.js` holds the "Concept first" card (analogy, steps, paper game, links) shown before each lab, keyed by lab id; edit it there, not in the labs.
+- `learn-llm/concepts.json` holds the "Concept first" text per lab (inlined into the page by index.php and also server-rendered for crawlers); `js/concepts.js` only renders it. SEO titles/descriptions live in `learn-llm/labs.php` (title <=60, description 150-160 chars).

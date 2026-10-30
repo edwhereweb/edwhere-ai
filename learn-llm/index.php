@@ -4,8 +4,10 @@ function asset(string $p): string { return $p . '?v=' . (@filemtime(__DIR__ . '/
 require __DIR__ . '/labs.php';
 $id = $_GET['lab'] ?? '';
 $m = LABS_META[$id] ?? null;
-$title = $m ? "$m[1] – LLM Concept Lab" : 'LLM Concept Lab – 12 Interactive Labs: Tokenization to Attention';
-$desc = $m ? $m[2] . ' An interactive lab that runs in your browser.' : 'Twelve interactive labs that teach how language models work: n-grams, smoothing, Word2Vec, tokenization, RNNs and attention. Edit the data, run the real algorithm in your browser.';
+$title = $m ? $m[3] : 'LLM Concept Lab: 12 Interactive Labs on How LLMs Work';
+$desc = $m ? $m[4] : 'Twelve interactive labs on how language models work: n-grams, Word2Vec, tokenization, RNNs and attention. Edit the data and run the real algorithm in-browser.';
+$concepts = json_decode(file_get_contents(__DIR__ . '/concepts.json'), true);
+$c = $concepts[$id] ?? null;
 $url = SITE . '/learn-llm/' . ($m ? "?lab=$id" : '');
 $h = fn($x) => htmlspecialchars($x, ENT_QUOTES);
 ?>
@@ -20,7 +22,7 @@ $h = fn($x) => htmlspecialchars($x, ENT_QUOTES);
 <link rel="canonical" href="<?= $url ?>">
 <meta property="og:type" content="website"><meta property="og:site_name" content="LLM Concept Lab">
 <meta property="og:title" content="<?= $h($title) ?>"><meta property="og:description" content="<?= $h($desc) ?>"><meta property="og:url" content="<?= $url ?>">
-<meta name="twitter:card" content="summary"><meta name="twitter:title" content="<?= $h($title) ?>"><meta name="twitter:description" content="<?= $h($desc) ?>">
+<meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="<?= SITE ?>/og-image.png"><meta name="twitter:image" content="<?= SITE ?>/og-image.png"><meta name="twitter:title" content="<?= $h($title) ?>"><meta name="twitter:description" content="<?= $h($desc) ?>">
 <script type="application/ld+json"><?= json_encode(['@context' => 'https://schema.org', '@graph' => [
   $m ? ['@type' => 'LearningResource', 'name' => $m[1], 'description' => $m[2], 'url' => $url, 'inLanguage' => 'en', 'learningResourceType' => 'Interactive lab', 'isPartOf' => ['@type' => 'Course', 'name' => 'LLM Concept Lab', 'url' => SITE . '/learn-llm/']]
      : ['@type' => 'Course', 'name' => 'LLM Concept Lab', 'description' => $desc, 'url' => $url, 'provider' => ['@type' => 'Organization', 'name' => 'edwhere', 'url' => SITE . '/'],
@@ -51,9 +53,11 @@ $h = fn($x) => htmlspecialchars($x, ENT_QUOTES);
   </aside>
   <main id="main"><div id="ssr">
     <?php if ($m): ?><h1><?= $h($m[1]) ?></h1><p class="lede"><?= $h($m[2]) ?></p><?php else: ?><h1>LLM Concept Lab: 12 interactive labs on how language models work</h1><p class="lede"><?= $h($desc) ?></p><?php endif; ?>
+    <?php if ($c): ?><h2>The idea in plain words</h2><p><?= $c['analogy'] ?></p><h2>Step by step</h2><ol><?php foreach ($c['steps'] as $st): ?><li><?= $st ?></li><?php endforeach; ?></ol><h2>Play it on paper first</h2><p><?= $c['game'] ?></p><h2>Other labs</h2><?php endif; ?>
     <ul><?php foreach (LABS_META as $k => $v): ?><li><a href="?lab=<?= $k ?>"><?= $h($v[1]) ?></a></li><?php endforeach; ?></ul>
   </div></main>
 </div>
+<script>const CONCEPTS = <?= json_encode($concepts, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) ?>;</script>
 <?php foreach (['core', 'labs-ngram', 'labs-embeddings', 'labs-sequence', 'concepts', 'art', 'main'] as $s): ?>
 <script defer src="<?= asset("js/$s.js") ?>"></script>
 <?php endforeach; ?>
