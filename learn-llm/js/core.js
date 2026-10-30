@@ -123,7 +123,7 @@ function show() {
   if (id === 'home' || !L) { v.innerHTML = homeView(); }
   else if (!built[id]) {
     const i = LABS.indexOf(L), prev = LABS[i - 1], next = LABS[i + 1];
-    v.innerHTML = `<div class="eyebrow">Lab ${String(L.n).padStart(2, '0')} · ${esc(L.short)}</div><h1>${esc(L.title)}</h1><p class="lede">${L.lede}</p><div class="labbody"></div>
+    v.innerHTML = `<div class="eyebrow">Lab ${String(L.n).padStart(2, '0')} · ${esc(L.short)}</div><h1>${esc(L.title)}</h1><p class="lede">${L.lede}</p>${conceptCard(id)}<div class="labbody"></div>
     <div class="foot-nav">${prev ? `<a class="btn ghost" href="#${prev.id}">← ${esc(prev.short)}</a>` : '<a class="btn ghost" href="#home">← Start</a>'}${next ? `<a class="btn" href="#${next.id}">Next: ${esc(next.short)} →</a>` : '<a class="btn" href="#home">Back to all labs</a>'}</div>`;
     try { L.build($('.labbody', v)); } catch (err) { $('.labbody', v).innerHTML = '<div class="note bad">This lab failed to load: ' + esc(err.message) + '</div>'; console.error(err); }
     built[id] = true;
@@ -131,9 +131,15 @@ function show() {
   v.hidden = false;
   LABS.forEach(l => { if (l.id !== id && l.pause) l.pause(); });
   renderNav();
+  document.title = L ? `${L.title} – LLM Concept Lab` : HOME_TITLE;
   window.scrollTo(0, 0);
 }
+const HOME_TITLE = document.title;
 function boot() {
+  // Server-rendered text is for crawlers; the app replaces it. A crawlable ?lab=labN URL opens that lab.
+  $('#ssr')?.remove();
+  const q = new URLSearchParams(location.search).get('lab');
+  if (q && !location.hash && LABS.some(l => l.id === q)) history.replaceState(null, '', location.pathname + '#' + q);
   $('#mnav').addEventListener('change', e => { location.hash = e.target.value; });
   window.addEventListener('hashchange', show);
   show();
