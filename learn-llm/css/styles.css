@@ -209,3 +209,21 @@ h1 { font-size: clamp(30px, 5.4vw, 52px); letter-spacing: -.04em; }
 .confetti i { position: absolute; width: 9px; height: 14px; border-radius: 2px; animation: pop 1.5s cubic-bezier(.2,.8,.3,1) forwards; }
 @keyframes pop { to { transform: translate(var(--x), var(--y)) rotate(var(--r)); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .view, .lcard, .hero-art *, .cyc { animation: none !important; transition: none !important; } .hero-art .arc { stroke-dashoffset: 0; } }
+/* "Watch it explained" videos */
+.vids { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 14px; margin: 8px 0 14px; }
+.vid { margin: 0; background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.vthumb, .vframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; padding: 0; background: #000; }
+.vthumb { position: relative; cursor: pointer; overflow: hidden; }
+.vthumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s; }
+.vthumb:hover img, .vthumb:focus-visible img { transform: scale(1.04); }
+.vthumb:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+.vplay { position: absolute; left: 50%; top: 50%; width: 58px; height: 40px; margin: -20px 0 0 -29px; border-radius: 10px; background: rgba(0, 0, 0, .72); }
+.vplay::after { content: ""; position: absolute; left: 24px; top: 12px; border-style: solid; border-width: 8px 0 8px 13px; border-color: transparent transparent transparent #fff; }
+.vthumb:hover .vplay { background: var(--bad); }
+.vid figcaption { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.vid figcaption b { font-size: 14.5px; line-height: 1.35; overflow-wrap: anywhere; }
+.vtag { align-self: flex-start; font-family: var(--mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 1px 8px; }
+.vch { color: var(--muted); font-size: 13px; }
+.vch a { color: var(--accent); }
+.vwhy { color: var(--ink); font-size: 13.5px; line-height: 1.45; }
+@media (prefers-reduced-motion: reduce) { .vthumb img { transition: none; } }
