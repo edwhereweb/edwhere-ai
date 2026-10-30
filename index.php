@@ -2,7 +2,7 @@
 // Landing page for ai.edwhere.com. Reuses the labs' design tokens and illustrations.
 function asset(string $p): string { return $p . '?v=' . (@filemtime(__DIR__ . '/' . $p) ?: 0); }
 require __DIR__ . '/learn-llm/labs.php';
-$title = 'edwhere AI – Learn How LLMs Work with Interactive Labs';
+$title = 'edwhere Learning – Learn How LLMs Work with Interactive Labs';
 $desc = 'Learn AI by playing with it. Interactive labs run the real algorithms in your browser, so you see how language models work and what breaks without each idea.';
 $url = SITE . '/';
 ?>
@@ -15,16 +15,17 @@ $url = SITE . '/';
 <meta name="description" content="<?= $desc ?>">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="<?= $url ?>">
-<meta property="og:type" content="website"><meta property="og:site_name" content="edwhere AI">
+<meta property="og:type" content="website"><meta property="og:site_name" content="edwhere Learning">
 <meta property="og:title" content="<?= $title ?>"><meta property="og:description" content="<?= $desc ?>"><meta property="og:url" content="<?= $url ?>">
 <meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="<?= SITE ?>/og-image.png"><meta name="twitter:image" content="<?= SITE ?>/og-image.png"><meta name="twitter:title" content="<?= $title ?>"><meta name="twitter:description" content="<?= $desc ?>">
 <script type="application/ld+json"><?= json_encode(['@context' => 'https://schema.org', '@graph' => [
-  ['@type' => 'WebSite', 'name' => 'edwhere AI', 'url' => $url, 'description' => $desc],
-  ['@type' => 'Organization', 'name' => 'edwhere', 'url' => $url],
+  ['@type' => 'WebSite', 'name' => 'edwhere Learning', 'url' => $url, 'description' => $desc],
+  ['@type' => 'Organization', 'name' => 'edwhere', 'url' => 'https://edwhere.com/', 'logo' => SITE . '/img/logo-192.png'],
 ]], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a73e8'/%3E%3Cpath d='M8 20l5-8 4 6 3-4 4 6' stroke='%23fff' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -54,7 +55,7 @@ footer { text-align: center; color: var(--muted); font-size: 14px; padding: 32px
 </style>
 </head>
 <body>
-<header class="top"><a class="brand" href="/">edwhere AI</a><nav><a href="learn-llm/">Learn LLM →</a></nav></header>
+<header class="top"><a class="brand" href="/"><img class="logo" src="/img/logo-64.png" alt="" width="28" height="28">edwhere Learning</a><nav><a href="learn-llm/">Learn LLM →</a></nav></header>
 <div class="page">
   <section class="hero view">
     <div class="hero-copy">
@@ -87,7 +88,7 @@ footer { text-align: center; color: var(--muted); font-size: 14px; padding: 32px
   <h2 class="section-h">All labs</h2>
   <div class="pills"><?php foreach (LABS_META as $id => $m): ?><a class="chip" href="learn-llm/?lab=<?= $id ?>"><?= htmlspecialchars($m[0]) ?></a> <?php endforeach; ?></div>
 </div>
-<footer>© <?= date('Y') ?> edwhere · ai.edwhere.com</footer>
+<footer>© <?= date('Y') ?> edwhere Learning · ai.edwhere.com</footer>
 <script src="<?= asset('learn-llm/js/art.js') ?>"></script>
 <script>
 document.getElementById('art').innerHTML = ART.hero();

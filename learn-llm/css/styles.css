@@ -28,6 +28,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .app { display: grid; grid-template-columns: 250px minmax(0, 1fr); min-height: 100%; }
 .rail { position: sticky; top: env(safe-area-inset-top, 0px); align-self: start; height: calc(100vh - env(safe-area-inset-top, 0px)); overflow-y: auto; background: var(--panel); border-right: 1px solid var(--line); padding: 20px 14px 20px max(14px, env(safe-area-inset-left, 0px)); }
 .brand { font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: -.01em; line-height: 1.15; margin: 0 6px 4px; }
+.logo { vertical-align: -8px; margin-right: 8px; background: #fff; border-radius: 8px; padding: 2px; }
 .brand small { display: block; font-family: var(--mono); font-weight: 400; font-size: 11px; color: var(--muted); letter-spacing: .04em; margin-top: 4px; }
 .rail nav { display: flex; flex-direction: column; gap: 2px; margin-top: 16px; }
 .rail a { display: grid; grid-template-columns: 28px 1fr 14px; align-items: center; gap: 6px; padding: 7px 8px; border-radius: 6px; color: var(--ink); text-decoration: none; font-size: 14.5px; }
