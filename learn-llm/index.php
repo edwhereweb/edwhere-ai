@@ -54,7 +54,7 @@ $h = fn($x) => htmlspecialchars($x, ENT_QUOTES);
   </aside>
   <main id="main"><div id="ssr">
     <?php if ($m): ?><h1><?= $h($m[1]) ?></h1><p class="lede"><?= $h($m[2]) ?></p><?php else: ?><h1>LLM Concept Lab: 12 interactive labs on how language models work</h1><p class="lede"><?= $h($desc) ?></p><?php endif; ?>
-    <?php if ($c): ?><h2>The idea in plain words</h2><p><?= $c['analogy'] ?></p><h2>Step by step</h2><ol><?php foreach ($c['steps'] as $st): ?><li><?= $st ?></li><?php endforeach; ?></ol><h2>Play it on paper first</h2><p><?= $c['game'] ?></p><h2>Other labs</h2><?php endif; ?>
+    <?php if ($c): ?><h2>The idea in plain words</h2><p><?= $c['analogy'] ?></p><h2>Step by step</h2><ol><?php foreach ($c['steps'] as $st): ?><li><?= $st ?></li><?php endforeach; ?></ol><h2>Play it on paper first</h2><p><?= $c['game'] ?></p><?php if (!empty($c['videos'])): ?><h2>Watch it explained</h2><ul><?php foreach ($c['videos'] as $vd): ?><li><a href="https://www.youtube.com/watch?v=<?= $h($vd['id']) ?>"><?= $h($vd['title']) ?></a> (<?= $h($vd['channel']) ?>): <?= $h($vd['why']) ?></li><?php endforeach; ?></ul><?php endif; ?><h2>Other labs</h2><?php endif; ?>
     <ul><?php foreach (LABS_META as $k => $v): ?><li><a href="?lab=<?= $k ?>"><?= $h($v[1]) ?></a></li><?php endforeach; ?></ul>
   </div></main>
 </div>

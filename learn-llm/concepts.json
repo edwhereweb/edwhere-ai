@@ -22,6 +22,22 @@
     "Intro to language models: n-gram (Towards Data Science)",
     "https://towardsdatascience.com/introduction-to-language-models-n-gram-e323081503d9"
    ]
+  ],
+  "videos": [
+   {
+    "id": "i3AkTO9HLXo",
+    "title": "Markov Chains Clearly Explained! Part 1",
+    "channel": "Normalized Nerd",
+    "level": "Start here",
+    "why": "A restaurant that decides tomorrow's dish (burger, pizza or hot dog) only from today's dish. That is exactly the Markov assumption, drawn as a diagram and a table you can read without any maths."
+   },
+   {
+    "id": "PaCmpygFfXo",
+    "title": "The spelled-out intro to language modeling: building makemore",
+    "channel": "Andrej Karpathy",
+    "level": "Hands-on",
+    "why": "Takes 32,000 real names, counts which letter follows which, turns the counts into probabilities and generates new names. The first part is a bigram model built live, line by line. Watch the first 30-40 minutes; the rest goes deeper."
+   }
   ]
  },
  "lab2": {
@@ -48,6 +64,22 @@
     "Stanford CS224n: smoothing handout",
     "https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1106/handouts/cs224n-lecture3-2010-melange.pdf"
    ]
+  ],
+  "videos": [
+   {
+    "id": "O2L2Uv9pdDA",
+    "title": "Naive Bayes, Clearly Explained!!!",
+    "channel": "StatQuest with Josh Starmer",
+    "level": "Start here",
+    "why": "A spam filter for everyday messages (\"Dear Friend\", \"Lunch Money\"). Watch what happens when a word never appeared in spam: its probability is 0 and it wipes out the whole score. The fix is to add a count to every word, which is add-one (Laplace) smoothing."
+   },
+   {
+    "id": "QGT6XTeA3YQ",
+    "title": "N-Gram Smoothing Techniques",
+    "channel": "NLP lecture (Jurafsky & Martin slides)",
+    "level": "Go deeper",
+    "why": "A classroom walk-through of Laplace, add-k, backoff, interpolation and Kneser-Ney on word pairs, following the same textbook as this lab."
+   }
   ]
  },
  "lab3": {
@@ -73,6 +105,22 @@
     "Perplexity in language models (Baeldung)",
     "https://www.baeldung.com/cs/language-models-perplexity"
    ]
+  ],
+  "videos": [
+   {
+    "id": "YtebGVx-Fxw",
+    "title": "Entropy (for data science) Clearly Explained!!!",
+    "channel": "StatQuest with Josh Starmer",
+    "level": "Start here",
+    "why": "Uses boxes of orange and blue chickens to explain \"surprise\": a rare pick surprises you more than a common one. Perplexity is just this average surprise turned back into a count of choices, so this is the best warm-up."
+   },
+   {
+    "id": "gHHy2w2agEo",
+    "title": "Language Model Evaluation and Perplexity",
+    "channel": "DeepLearning.AI NLP course",
+    "level": "Practical",
+    "why": "Splits a corpus into training and test sets, then computes perplexity on a small sentence by hand. Shows why a lower score means a better model."
+   }
   ]
  },
  "lab4": {
@@ -98,6 +146,22 @@
     "The structure of a wordnet (guide)",
     "https://wn.readthedocs.io/en/latest/guides/wordnet.html"
    ]
+  ],
+  "videos": [
+   {
+    "id": "UJq8f7gLtL0",
+    "title": "WordNet in NLP Explained",
+    "channel": "YouTube tutorial",
+    "level": "Start here",
+    "why": "Plain-language tour of WordNet as a dictionary-plus-thesaurus: synsets, definitions and is-a links such as \"a car is a kind of motor vehicle\"."
+   },
+   {
+    "id": "onWfWqRO-Gc",
+    "title": "NLTK Text Processing 05: Synsets, Hypernyms and Hyponyms",
+    "channel": "YouTube tutorial",
+    "level": "Hands-on",
+    "why": "Opens WordNet in Python with NLTK and climbs the is-a tree for real words, so you can try the same lookups yourself."
+   }
   ]
  },
  "lab5": {
@@ -127,6 +191,22 @@
     "The amazing power of word vectors",
     "https://www.kdnuggets.com/2016/05/amazing-power-word-vectors.html"
    ]
+  ],
+  "videos": [
+   {
+    "id": "viZrOnJclY0",
+    "title": "Word Embedding and Word2Vec, Clearly Explained!!!",
+    "channel": "StatQuest with Josh Starmer",
+    "level": "Start here",
+    "why": "Uses two tiny movie reviews (\"Troll 2 is great!\", \"Gymkata is great!\") to show how a network learns that words used in the same places get similar numbers. Starts from zero and ends at Word2Vec."
+   },
+   {
+    "id": "gQddtTdmG_8",
+    "title": "Vectoring Words (Word Embeddings)",
+    "channel": "Computerphile",
+    "level": "Real-life demo",
+    "why": "Rob Miles types analogies into a real trained model live (king − man + woman, cities and countries) and shows where they work and where they break."
+   }
   ]
  },
  "lab6": {
@@ -152,6 +232,22 @@
     "Word2Vec Parameter Learning Explained (paper)",
     "https://www.academia.edu/39356625/word2vec_Parameter_Learning_Explained"
    ]
+  ],
+  "videos": [
+   {
+    "id": "BWaHLmG1lak",
+    "title": "Understanding Word Embeddings 2: CBOW and Skip Gram",
+    "channel": "Rasa (Algorithm Whiteboard)",
+    "level": "Start here",
+    "why": "Whiteboard drawing of a sentence with a sliding window: hide the middle word, use its neighbours to guess it. That is CBOW; the same video then flips it around for skip-gram."
+   },
+   {
+    "id": "viZrOnJclY0",
+    "title": "Word Embedding and Word2Vec, Clearly Explained!!!",
+    "channel": "StatQuest with Josh Starmer",
+    "level": "Recap",
+    "why": "Already watched it for Lab 5? Jump to the Word2Vec part near the end, where Josh shows the \"use the surrounding words to predict the middle word\" network."
+   }
   ]
  },
  "lab7": {
@@ -177,6 +273,15 @@
     "Mikolov et al.: word2vec explained (Goldberg & Levy)",
     "https://arxiv.org/abs/1402.3722"
    ]
+  ],
+  "videos": [
+   {
+    "id": "BWaHLmG1lak",
+    "title": "Understanding Word Embeddings 2: CBOW and Skip Gram",
+    "channel": "Rasa (Algorithm Whiteboard)",
+    "level": "Start here",
+    "why": "Shows one centre word producing several (word, neighbour) training pairs from the same window, and compares that side by side with CBOW."
+   }
   ]
  },
  "lab8": {
@@ -202,6 +307,22 @@
     "Negative sampling overview (Baeldung)",
     "https://www.baeldung.com/cs/nlps-word2vec-negative-sampling"
    ]
+  ],
+  "videos": [
+   {
+    "id": "sRiiGiKreZ0",
+    "title": "What is Negative Sampling?",
+    "channel": "YouTube explainer",
+    "level": "Start here",
+    "why": "The core trick in a few minutes: pull real (word, neighbour) pairs together, push a handful of random pairs apart, and skip the huge softmax over every word."
+   },
+   {
+    "id": "viZrOnJclY0",
+    "title": "Word Embedding and Word2Vec, Clearly Explained!!!",
+    "channel": "StatQuest with Josh Starmer",
+    "level": "Recap",
+    "why": "The last section explains why Word2Vec would be far too slow on millions of words, and how negative sampling only updates a few words per step."
+   }
   ]
  },
  "lab9": {
@@ -223,6 +344,29 @@
     "WordPiece tokenization (Hugging Face course)",
     "https://huggingface.co/course/chapter6/6?fw=pt"
    ]
+  ],
+  "videos": [
+   {
+    "id": "HEikzVL-lZU",
+    "title": "Byte Pair Encoding Tokenization",
+    "channel": "Hugging Face",
+    "level": "Start here",
+    "why": "Short animated walk-through on a toy corpus: start from letters, merge the most frequent pair, repeat. Same steps as the BPE side of this lab."
+   },
+   {
+    "id": "qpv6ms_t_1A",
+    "title": "WordPiece Tokenization",
+    "channel": "Hugging Face",
+    "level": "Start here",
+    "why": "The same toy example done the WordPiece way (the tokenizer behind BERT), so you can see exactly how its merge score differs from BPE."
+   },
+   {
+    "id": "zduSFxRajkE",
+    "title": "Let's build the GPT Tokenizer",
+    "channel": "Andrej Karpathy",
+    "level": "Go deeper",
+    "why": "Long, practical build of a BPE tokenizer in Python, with real examples of why chatbots struggle with spelling, maths and non-English text. Pick the parts you need."
+   }
   ]
  },
  "lab10": {
@@ -250,6 +394,22 @@
     "Vanishing gradient problem (Wikipedia)",
     "https://en.wikipedia.org/wiki/Vanishing_gradient_problem"
    ]
+  ],
+  "videos": [
+   {
+    "id": "AsNTP8Kwu80",
+    "title": "Recurrent Neural Networks (RNNs), Clearly Explained!!!",
+    "channel": "StatQuest with Josh Starmer",
+    "level": "Start here",
+    "why": "Predicts tomorrow's stock price from the previous days, one day at a time, with the same weights reused each step. Ends with why the memory fades or explodes (vanishing and exploding gradients)."
+   },
+   {
+    "id": "YCzL96nL7j0",
+    "title": "Long Short-Term Memory (LSTM), Clearly Explained",
+    "channel": "StatQuest with Josh Starmer",
+    "level": "Next step",
+    "why": "The fix for fading memory: a separate long-term path through the network, explained with the same stock example."
+   }
   ]
  },
  "lab11": {
@@ -277,6 +437,29 @@
     "Interactive attention + beam-search visualisation (EMNLP demo)",
     "https://aclanthology.org/D17-2021/"
    ]
+  ],
+  "videos": [
+   {
+    "id": "L8HKweZIOmg",
+    "title": "Sequence-to-Sequence (seq2seq) Encoder-Decoder Neural Networks, Clearly Explained!!!",
+    "channel": "StatQuest with Josh Starmer",
+    "level": "Start here",
+    "why": "Translates \"Let's go\" into Spanish step by step: the encoder reads the English, the decoder writes the Spanish one word at a time. Covers teacher forcing during training."
+   },
+   {
+    "id": "PSs6nxngL6k",
+    "title": "Attention for Neural Networks, Clearly Explained!!!",
+    "channel": "StatQuest with Josh Starmer",
+    "level": "Next step",
+    "why": "Same \"Let's go\" example, now letting the decoder look back at each input word instead of squeezing the sentence into one vector."
+   },
+   {
+    "id": "_vsf0YPyKws",
+    "title": "Beam Search Algorithm Explained: Why It Beats Greedy Decoding",
+    "channel": "YouTube explainer",
+    "level": "Beam search",
+    "why": "Why always taking the single best next word can paint you into a corner, and how keeping the top few candidates fixes it."
+   }
   ]
  },
  "lab12": {
@@ -304,6 +487,29 @@
     "Math behind attention: Q, K and V",
     "https://outcomeschool.com/blog/math-behind-attention-qkv"
    ]
+  ],
+  "videos": [
+   {
+    "id": "eMlx5fFNoYc",
+    "title": "Attention in transformers, visually explained",
+    "channel": "3Blue1Brown",
+    "level": "Start here",
+    "why": "Beautiful visual story: in \"a fluffy blue creature roamed the verdant forest\", how does \"creature\" pick up \"fluffy\" and \"blue\"? Queries, keys and values explained as questions and answers between words."
+   },
+   {
+    "id": "tIvKXrEDMhk",
+    "title": "Transformers & Attention 2: Keys, Values, Queries",
+    "channel": "Rasa (Algorithm Whiteboard)",
+    "level": "Whiteboard",
+    "why": "Draws the query-key-value matrices by hand on a whiteboard, close to how you compute them in this lab."
+   },
+   {
+    "id": "zxQyTK8quyY",
+    "title": "Transformer Neural Networks, ChatGPT's foundation, Clearly Explained!!!",
+    "channel": "StatQuest with Josh Starmer",
+    "level": "Big picture",
+    "why": "Puts attention inside a full transformer (embeddings, position, self-attention, encoder-decoder) with the friendly \"Let's go\" example."
+   }
   ]
  }
 }
